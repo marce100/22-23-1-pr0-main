@@ -7,22 +7,28 @@ import edu.uoc.ds.adt.sequential.StackArrayImpl;
 public class PR0Stack {
 
     // Capacitat màxima de la seqüència.
-    public final int CAPACITY = 9;
+    public final int CAPACITY = 10;
 
-    private Stack<Character> stack;
+    private Stack<Integer> stack;
 
     public PR0Stack() {
         newStack();
     }
 
     public void newStack() {
-        stack = new StackArrayImpl<Character>(CAPACITY);
+        stack = new StackArrayImpl<Integer>(CAPACITY);
     }
 
-
     public void fillStack() {
-        for (char c = '0'; c < '9'; c++) {
-            stack.push(Character.valueOf(c));
+        for (int i = 2; i <= 29; i++) {     // i number to check
+            int j = 2;                      // j divisor
+            while (i % j != 0) {
+                j++;
+            }
+            if (j == i) {
+                //System.out.print(i+" ");
+                stack.push(i);
+            }
         }
     }
 
@@ -33,7 +39,7 @@ public class PR0Stack {
         return sb.toString();
     }
 
-    public Stack<Character> getStack() {
+    public Stack<Integer> getStack() {
         return this.stack;
     }
 }
