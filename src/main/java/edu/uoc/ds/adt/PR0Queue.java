@@ -13,6 +13,7 @@ public class PR0Queue {
     public PR0Queue() {
         newQueue();
     }
+
     public void newQueue() {
         queue = new QueueArrayImpl<>(CAPACITY);
     }
@@ -28,7 +29,6 @@ public class PR0Queue {
             }
         }
     }
-
 
     public String clearFullQueue() {
         StringBuilder sb = new StringBuilder();
